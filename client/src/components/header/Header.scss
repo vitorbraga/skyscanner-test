@@ -1,0 +1,15 @@
+@import "~bpk-mixins";
+
+.blue-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $bpk-spacing-sm $bpk-spacing-sm;
+
+  background-color: $bpk-color-white;
+  box-shadow: 0 0 10px 0 $bpk-color-gray-300;
+
+  background-color: #00B2D6;
+  height: 120px;
+  color: white;
+}

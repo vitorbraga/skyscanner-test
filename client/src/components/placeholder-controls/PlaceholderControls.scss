@@ -1,0 +1,11 @@
+@import "~bpk-mixins";
+
+.placeholder-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $bpk-spacing-sm $bpk-spacing-sm;
+
+  background-color: $bpk-color-white;
+  height: 50px;
+}

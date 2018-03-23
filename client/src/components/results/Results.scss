@@ -1,0 +1,13 @@
+@import "~bpk-mixins";
+
+.results {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $bpk-spacing-sm $bpk-spacing-sm;
+
+  background-color: $bpk-color-white;
+
+  background-color: #F2F1F4;
+  height: 500px;
+}
