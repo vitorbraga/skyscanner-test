@@ -1,0 +1,7 @@
+@import "~bpk-mixins";
+
+.select-button {
+  @include bpk-button();
+  outline: none;
+}
+

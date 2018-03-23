@@ -1,0 +1,7 @@
+@import "~bpk-mixins";
+
+.card {
+  @include bpk-card();
+  @include bpk-card--padded();
+  width: 90%;
+}

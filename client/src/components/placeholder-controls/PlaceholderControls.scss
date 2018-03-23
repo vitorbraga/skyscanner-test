@@ -2,10 +2,32 @@
 
 .placeholder-controls {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: $bpk-spacing-sm $bpk-spacing-sm;
 
+  padding: $bpk-spacing-sm 300px;
   background-color: $bpk-color-white;
   height: 50px;
+
+  .left-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 0;
+
+  }
+
+  .right-wrapper {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+  }
+
+  .menu-button {
+    color: #00B2D6;
+    font-size: 16px;
+
+    &.space-left {
+      margin-left: 24px;
+    }
+  }
 }

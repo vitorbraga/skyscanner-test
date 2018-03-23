@@ -161,7 +161,7 @@ module.exports = {
     // 'import/namespace': 'warn',
     // 'import/no-amd': 'warn',
     // 'import/no-duplicates': 'warn',
-    // 'import/no-extraneous-dependencies': 'warn',
+    // 'import/no-extraneous-dependencies': [0],
     // 'import/no-named-as-default': 'warn',
     // 'import/no-named-as-default-member': 'warn',
     // 'import/no-unresolved': ['warn', { commonjs: true }],
