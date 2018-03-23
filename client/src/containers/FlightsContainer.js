@@ -1,25 +1,17 @@
-// import { connect } from 'react-redux';
-// import { toggleTodo } from '../actions';
-// import App from '../components/TodoList';
-//  
-// const getVisibleTodos = (todos, filter) => {
-//   switch (filter) {
-//     case 'SHOW_COMPLETED':
-//       return todos.filter(t => t.completed)
-//     case 'SHOW_ACTIVE':
-//       return todos.filter(t => !t.completed)
-//     case 'SHOW_ALL':
-//     default:
-//       return todos
-//   }
-// }
-//  
-// const mapStateToProps = state => ({
-//   todos: getVisibleTodos(state.todos, state.visibilityFilter)
-// })
-//  
-// const mapDispatchToProps = dispatch => ({
-//   toggleTodo: id => dispatch(toggleTodo(id))
-// })
-//  
-// export default connect()(TodoList)
+import { fetchFlights, startLoading } from '../actions';
+import { flights, isLoading } from '../selectors';
+
+import Flights from '../components/flights/Flights';
+import { connect } from 'react-redux';
+
+const mapStateToProps = state => ({
+  loading: isLoading(state),
+  flights: flights(state)
+})
+ 
+const mapDispatchToProps = dispatch => ({
+  searchFlights: fetchFlights,
+  startLoading: () => dispatch(startLoading())
+})
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(Flights)

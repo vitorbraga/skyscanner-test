@@ -1,15 +1,9 @@
 const loading = (state = [], action) => {
   switch (action.type) {
     case 'START_LOADING':
-      return {
-        ...state,
-        loading: true
-      };
+      return true;
     case 'STOP_LOADING':
-      return {
-        ...state,
-        loading: false
-      };
+      return false;
     default:
       return state;
   }
