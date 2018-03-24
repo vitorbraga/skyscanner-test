@@ -8,7 +8,6 @@ import PropTypes from 'prop-types';
 class Results extends Component {
 
   static propTypes = {
-    loading: PropTypes.bool,
     flights: PropTypes.arrayOf(PropTypes.object),
   };
 
@@ -16,11 +15,10 @@ class Results extends Component {
   // renderizaremos os FlightCards
   render() {
 
-    const { loading, flights } = this.props;
+    // const { flights } = this.props;
 
     return (
       <div className="results">
-        {loading ? 'Loading' : 'Not loading'}
         <FlightCard />
       </div>
     );

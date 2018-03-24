@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import Loading from '../loading';
 import PropTypes from 'prop-types';
 import Results from '../results';
 
@@ -8,7 +9,7 @@ class Flights extends Component {
   static propTypes = {
     loading: PropTypes.bool,
     flights: PropTypes.arrayOf(PropTypes.object),
-    fetchFlights: PropTypes.func,
+    searchFlights: PropTypes.func,
     startLoading: PropTypes.func
   };
 
@@ -18,17 +19,16 @@ class Flights extends Component {
 
   componentDidMount() {
     this.props.startLoading();
+    this.props.searchFlights();
   }
 
 
   render() {
 
     const { loading, flights } = this.props;
-    // console.log('Flights');
-    // console.log(this.props.loading)
     return (
       <div>
-        <Results flights={flights} loading={loading} />
+        {loading ? <Loading /> : <Results flights={flights} />}
       </div>
     );
   }

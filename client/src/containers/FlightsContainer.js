@@ -10,8 +10,8 @@ const mapStateToProps = state => ({
 })
  
 const mapDispatchToProps = dispatch => ({
-  searchFlights: fetchFlights,
-  startLoading: () => dispatch(startLoading())
+  startLoading: () => dispatch(startLoading()),
+  searchFlights: () => dispatch(fetchFlights())
 })
  
 export default connect(mapStateToProps, mapDispatchToProps)(Flights)
