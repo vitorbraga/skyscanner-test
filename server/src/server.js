@@ -6,6 +6,7 @@ const express = require('express');
 const app = express();
 const api = require('./api/');
 const validateSearch = require('./validation');
+const utils = require('./utils');
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -20,8 +21,6 @@ app.get('/', (req, res) => {
 /**
   Simple flight search api wrapper.
 
-  TODO: client should provide params
-
   Api params and location values are here:
   http://business.skyscanner.net/portal/en-GB/Documentation/FlightsLivePricingQuickStart
 */
@@ -32,53 +31,27 @@ app.get('/api/search', (req, res) => {
     return res.json({ error: true, message: `Invalid parameter ${valid}` });
   }
 
-  const flight = {
-    price: 230,
-    departure: {
-      carrier: '',
-      leaveTime: '',
-      arriveTime: '',
-      duration: 90,
-      stops: 0,
-    },
-    arrival: {
-      carrier: '',
-      leaveTime: '',
-      arriveTime: '',
-      duration: 90,
-      stops: 0,
-    }
-  }
-
-  const findById = (id, array) => {
-    return array.find(item => item.Id === id);
-  }
-
-  const findCarrier = (id, array) => {
-
-  }
-
   api.livePricing.search(req.query)
     .then((results) => {
 
-      const itineraries = _.take(results.Itineraries, 20);
+      const itineraries = _.take(results.Itineraries, utils.MAX_ITEMS);
       const flights = [];
 
       itineraries.forEach(it => {
-        const price = it.PricingOptions[0].Price;
-        const agent = findById(it.PricingOptions[0].Agents[0], results.Agents);
+        const price = Math.ceil(it.PricingOptions[0].Price);
+        const agent = utils.findById(it.PricingOptions[0].Agents[0], results.Agents);
 
         // Outbound Leg
-        const outboundLeg = findById(it.OutboundLegId, results.Legs);
-        const outboundCarrier = findById(outboundLeg.Carriers[0], results.Carriers);
-        const outboundOriginStation = findById(outboundLeg.OriginStation, results.Places);
-        const outboundDestinationStation = findById(outboundLeg.DestinationStation, results.Places);
+        const outboundLeg = utils.findById(it.OutboundLegId, results.Legs);
+        const outboundCarrier = utils.findById(outboundLeg.Carriers[0], results.Carriers);
+        const outboundOriginStation = utils.findById(outboundLeg.OriginStation, results.Places);
+        const outboundDestinationStation = utils.findById(outboundLeg.DestinationStation, results.Places);
 
         // Inbound Leg
-        const inboundLeg = findById(it.InboundLegId, results.Legs);
-        const inboundCarrier = findById(inboundLeg.Carriers[0], results.Carriers);
-        const inboundOriginStation = findById(inboundLeg.OriginStation, results.Places);
-        const inboundDestinationStation = findById(inboundLeg.DestinationStation, results.Places);
+        const inboundLeg = utils.findById(it.InboundLegId, results.Legs);
+        const inboundCarrier = utils.findById(inboundLeg.Carriers[0], results.Carriers);
+        const inboundOriginStation = utils.findById(inboundLeg.OriginStation, results.Places);
+        const inboundDestinationStation = utils.findById(inboundLeg.DestinationStation, results.Places);
 
         const fl = {
           price,
@@ -86,7 +59,7 @@ app.get('/api/search', (req, res) => {
           outbound: {
             departureTime: outboundLeg.Departure.substring(11, 16),
             arrivalTime: outboundLeg.Arrival.substring(11, 16),
-            duration: outboundLeg.Duration,
+            duration: utils.convertTime(outboundLeg.Duration),
             stops: outboundLeg.Stops.length,
             carrier: {
               name: outboundCarrier.Name,
@@ -98,7 +71,7 @@ app.get('/api/search', (req, res) => {
           inbound: {
             departureTime: inboundLeg.Departure.substring(11, 16),
             arrivalTime: inboundLeg.Arrival.substring(11, 16),
-            duration: inboundLeg.Duration,
+            duration: utils.convertTime(inboundLeg.Duration),
             stops: inboundLeg.Stops.length,
             carrier: {
               name: inboundCarrier.Name,

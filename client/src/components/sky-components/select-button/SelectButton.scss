@@ -3,5 +3,6 @@
 .select-button {
   @include bpk-button();
   outline: none;
+  width: 100px;
 }
 
