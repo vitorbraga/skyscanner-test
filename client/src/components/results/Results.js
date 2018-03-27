@@ -11,15 +11,15 @@ class Results extends Component {
     flights: PropTypes.arrayOf(PropTypes.object),
   };
 
-  // vai chegar props, com os dados da busca
-  // renderizaremos os FlightCards
   render() {
 
-    // const { flights } = this.props;
+    const { flights } = this.props;
 
     return (
       <div className="results">
-        <FlightCard />
+        {flights.length > 0 && flights.map(flight => <FlightCard flight={flight} />)}
+        {/* {flights.length > 0 && <FlightCard flight={flights[0]} />} */}
+
       </div>
     );
   }

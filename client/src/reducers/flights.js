@@ -3,7 +3,7 @@ const flights = (state = [], action) => {
     case 'FETCH_FLIGHTS':
       return state;
     case 'UPDATE_FLIGHTS':
-      return action.flights.Places;
+      return action.flights;
     default:
       return state;
   }

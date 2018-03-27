@@ -1,0 +1,59 @@
+.flight-leg {
+  display: flex;
+  margin-top: 10px;
+  // padding: 5px 20px;
+
+  &__left {
+    width: 60%;
+
+    &__trip {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      &__carrier {
+        width: 84px;
+        height: 42px;
+        margin-right: 16px;
+      }
+
+      &__arrow {
+        fill: green;
+      }
+
+      &__info {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .time {
+    color: #666370;
+    font-size: 16px;
+  }
+
+  .station {
+    color: #ABABAB;
+    font-size: 16px;
+    font-style: normal !important;
+  }
+
+  &__right {
+    width: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+
+    &__duration {
+      font-size: 14px;
+      color: #ABABAB;
+    }
+
+    &__stops {
+      font-size: 14px;
+      color: #2FDF8F;
+    }
+  }
+}

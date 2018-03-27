@@ -83,7 +83,7 @@ app.get('/api/search', (req, res) => {
         const fl = {
           price,
           agent: agent.Name,
-          departure: {
+          outbound: {
             departureTime: outboundLeg.Departure.substring(11, 16),
             arrivalTime: outboundLeg.Arrival.substring(11, 16),
             duration: outboundLeg.Duration,
@@ -95,7 +95,7 @@ app.get('/api/search', (req, res) => {
             originStation: outboundOriginStation.Code,
             destinationStation: outboundDestinationStation.Code
           },
-          arrival: {
+          inbound: {
             departureTime: inboundLeg.Departure.substring(11, 16),
             arrivalTime: inboundLeg.Arrival.substring(11, 16),
             duration: inboundLeg.Duration,

@@ -3,11 +3,13 @@
 .results {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
   padding: $bpk-spacing-sm 300px;
 
   background-color: $bpk-color-white;
 
   background-color: #F2F1F4;
-  height: 500px;
+  height: auto;
+  overflow: hidden;
 }
