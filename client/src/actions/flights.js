@@ -9,12 +9,12 @@ export const updateFlights = (flights) => ({
 const fecthAndDispatch = (dispatch) => {
   searchFlights
     .then(resp => {
-      console.log('resp dentro', resp);
+      console.log('resp dentro', resp); // FIXME
       dispatch(updateFlights(resp.data));
       dispatch(stopLoading());
     })
     .catch(error => {
-      console.log('error dentro', error);
+      console.log('error dentro', error); // FIXME
     });
 }
 

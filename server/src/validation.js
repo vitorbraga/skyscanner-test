@@ -25,13 +25,15 @@ const validateSearch = (query) => {
     return 'class';
   }
 
-  if (_.isNil(query.fromDate) || !validateFromDate(query.fromDate)) {
-    return 'fromDate';
-  }
+  // FIXME
 
-  if (_.isNil(query.toDate) || !validateToDate(query.toDate)) {
-    return 'toDate';
-  }
+  // if (_.isNil(query.fromDate) || !validateFromDate(query.fromDate)) {
+  //   return 'fromDate';
+  // }
+
+  // if (_.isNil(query.toDate) || !validateToDate(query.toDate)) {
+  //   return 'toDate';
+  // }
 
   if (_.isNil(query.fromPlace)) {
 

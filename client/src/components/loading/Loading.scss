@@ -3,9 +3,36 @@
 .loading {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   padding: $bpk-spacing-sm 300px;
 
   background-color: #F2F1F4;
   height: 500px;
+
+  &__placeholder {
+    margin-top: 20px;
+    width: 400px;
+  }
+}
+
+.custom-placeholder {
+  width: 400px;
+  height: 300px;
+
+  &__leg{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__bottom {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.custom-placeholder:not(:first-child) {
+  margin-top: 30px;
 }
