@@ -2,21 +2,20 @@ const _ = require('lodash');
 
 const CABIN_CLASS_VALUES = ['Economy', 'PremiumEconomy', 'Business', 'First'];
 
-const validateFromDate = (fromDate) => {
-  const today = new Date();
-  if (parseInt(fromDate.substring(8, 10), 10) < today.getDate()) {
-    return false;
-  }
-  return true;
-};
+const validateDates = (from, to) => {
+  const fromDate = new Date(from);
+  const toDate = new Date(to);
 
-const validateToDate = (toDate) => {
-  const today = new Date();
-  if (parseInt(toDate.substring(8, 10), 10) < (today.getDate() + 1)) {
+  if (fromDate < new Date()) {
     return false;
   }
+
+  if (fromDate >= toDate) {
+    return false;
+  }
+
   return true;
-};
+}
 
 const validateSearch = (query) => {
 
@@ -25,15 +24,17 @@ const validateSearch = (query) => {
     return 'class';
   }
 
-  // FIXME
+  if (_.isNil(query.fromDate)) {
+    return 'fromDate';
+  }
 
-  // if (_.isNil(query.fromDate) || !validateFromDate(query.fromDate)) {
-  //   return 'fromDate';
-  // }
+  if (_.isNil(query.toDate)) {
+    return 'toDate';
+  }
 
-  // if (_.isNil(query.toDate) || !validateToDate(query.toDate)) {
-  //   return 'toDate';
-  // }
+  if (!validateDates(query.fromDate, query.toDate)) {
+    return 'dates not eligible'
+  }
 
   if (_.isNil(query.fromPlace)) {
 
