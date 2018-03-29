@@ -8,12 +8,23 @@
 
   background-color: $bpk-color-white;
   box-shadow: 0 0 10px 0 $bpk-color-gray-300;
+
+  &__header-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    span {
+      margin-left: 10px;
+    }
+  }
 }
 
 .logo {
   vertical-align: middle;
 }
 
-.logoText {
-  @include bpk-visually-hidden;
+.logo-text {
+  color: #00B2D6;
+  text-decoration: none;
 }
