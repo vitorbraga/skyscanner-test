@@ -1,8 +1,11 @@
+import './Flights.scss';
+
 import React, { Component } from 'react';
 
 import Loading from '../loading';
 import PropTypes from 'prop-types';
 import Results from '../results';
+import { formatDateToView } from '../../utils';
 
 class Flights extends Component {
 
@@ -24,10 +27,16 @@ class Flights extends Component {
 
   render() {
 
-    const { loading, flights } = this.props;
+    const { loading, flights, flightInfo } = this.props;
+    const fromDate = formatDateToView(flightInfo.fromDate);
+    const toDate = formatDateToView(flightInfo.toDate);
 
     return (
-      <div>
+      <div className="flights">
+        <div className="flights__header">
+          Flights from {fromDate} to {toDate}
+        </div>
+        {/* <Loading /> */}
         {loading ? <Loading /> : <Results flights={flights} />}
       </div>
     );

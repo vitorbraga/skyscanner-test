@@ -3,7 +3,6 @@
 .card {
   @include bpk-card();
   // @include bpk-card--padded();
-  min-width: 400px;
+  min-width: 330px;
   margin-top: 20px;
-  // width: 90%;
 }

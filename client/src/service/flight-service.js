@@ -1,11 +1,15 @@
 import axios from 'axios';
 
-const url = 'http://localhost:4000/api/search?adults=1&class=' +
-  'Economy&fromPlace=EDI&fromDate=2018-04-12&toPlace=LCY&toDate=2018-04-15';
+const URL = 'http://192.168.15.10:4000/api/search';
 
-const searchFlights = new Promise(
+const buildURL = (p) => {
+  return `${URL}?adults=${p.adults}&class=${p.class}&fromPlace=${p.fromPlace}&` +
+    `fromDate=${p.fromDate}&toPlace=${p.toPlace}&toDate=${p.toDate}`;
+}
+
+const searchFlights = (flightInfo) => new Promise(
   (resolve, reject) => {
-    axios.get(url)
+    axios.get(buildURL(flightInfo))
       .then(function (response) {
         resolve(response);
       })

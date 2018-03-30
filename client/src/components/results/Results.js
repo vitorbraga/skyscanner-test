@@ -17,9 +17,8 @@ class Results extends Component {
 
     return (
       <div className="results">
-        {flights.length > 0 && flights.map(flight => <FlightCard flight={flight} />)}
-        {/* {flights.length > 0 && <FlightCard flight={flights[0]} />} */}
-
+        {flights.length > 0 &&
+          flights.map((flight, index) => <FlightCard key={`flight-${index}`} flight={flight} />)}
       </div>
     );
   }

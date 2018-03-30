@@ -6,13 +6,15 @@ class PlaceholderControls extends Component {
   render() {
     return (
       <div className="placeholder-controls">
-        <div className="left-wrapper">
-          <span className="menu-button">Filter</span>
-          <span className="menu-button space-left">Sort</span>
-        </div>
+        <div className="placeholder-controls__wrapper">
+          <div className="placeholder-controls__wrapper__left-wrapper">
+            <span className="menu-button">Filter</span>
+            <span className="menu-button space-left">Sort</span>
+          </div>
 
-        <div className="right-wrapper">
-          <span className="menu-button">Price alerts</span>
+          <div className="placeholder-controls__wrapper__right-wrapper">
+            <span className="menu-button">Price alerts</span>
+          </div>
         </div>
       </div>
     );

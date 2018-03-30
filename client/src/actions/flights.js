@@ -6,20 +6,19 @@ export const updateFlights = (flights) => ({
   flights
 });
 
-const fecthAndDispatch = (dispatch) => {
-  searchFlights
+const fecthAndDispatch = (dispatch, flightsInfo) => {
+  searchFlights(flightsInfo)
     .then(resp => {
-      console.log('resp dentro', resp); // FIXME
       dispatch(updateFlights(resp.data));
       dispatch(stopLoading());
     })
     .catch(error => {
-      console.log('error dentro', error); // FIXME
+      console.log('Some error', error); // FIXME
     });
 }
 
-export const fetchFlights = () => (dispatch, getState) => {
-  fecthAndDispatch(dispatch);
+export const fetchFlights = (flightsInfo) => (dispatch, getState) => {
+  fecthAndDispatch(dispatch, flightsInfo);
   return ({
     type: 'FETCH_FLIGHTS'
   });
