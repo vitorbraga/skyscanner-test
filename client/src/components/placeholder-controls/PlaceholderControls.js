@@ -8,12 +8,12 @@ class PlaceholderControls extends Component {
       <div className="placeholder-controls">
         <div className="placeholder-controls__wrapper">
           <div className="placeholder-controls__wrapper__left-wrapper">
-            <span className="menu-button">Filter</span>
-            <span className="menu-button space-left">Sort</span>
+            <a href="#" className="menu-button">Filter</a>
+            <a href="#" className="menu-button space-left">Sort</a>
           </div>
 
           <div className="placeholder-controls__wrapper__right-wrapper">
-            <span className="menu-button">Price alerts</span>
+            <a href="#" className="menu-button">Price alerts</a>
           </div>
         </div>
       </div>

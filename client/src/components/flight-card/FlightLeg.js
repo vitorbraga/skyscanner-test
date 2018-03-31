@@ -22,8 +22,8 @@ const FlightLeg = (props) => {
             className="flight-leg__left__trip__arrow"
             alt="arrow.svg"
             src={arrow}
-            height={24}
-            width={24}
+            height={20}
+            width={20}
           />
           <div className="flight-leg__left__trip__info">
             <span className="time">{leg.arrivalTime}</span>

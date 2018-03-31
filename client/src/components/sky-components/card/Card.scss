@@ -2,7 +2,7 @@
 
 .card {
   @include bpk-card();
-  // @include bpk-card--padded();
   min-width: 330px;
   margin-top: 20px;
+  cursor: default;
 }

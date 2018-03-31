@@ -4,7 +4,7 @@
   margin-bottom: 8px;
 
   &__left {
-    width: 60%;
+    width: 66%;
 
     &__trip {
       display: flex;
@@ -13,9 +13,9 @@
       align-items: center;
 
       &__carrier {
-        width: 80px;
-        height: 40px;
-        margin-right: 16px;
+        width: 75px;
+        height: 31px;
+        margin-right: 12px;
       }
 
       &__arrow {
@@ -31,29 +31,32 @@
 
   .time {
     color: #666370;
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 16px;
   }
 
   .station {
     color: #ABABAB;
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 16px;
     font-style: normal !important;
   }
 
   &__right {
-    width: auto;
     margin-left: auto;
     display: flex;
     flex-direction: column;
     text-align: end;
 
     &__duration {
-      font-size: 14px;
+      font-size: 12px;
+      line-height: 14px;
       color: #ABABAB;
     }
 
     &__stops {
-      font-size: 14px;
+      font-size: 12px;
+      line-height: 14px;
     }
   }
 

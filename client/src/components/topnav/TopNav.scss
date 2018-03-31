@@ -1,6 +1,6 @@
 @import "~bpk-mixins";
 
-.header {
+.top-nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -29,6 +29,7 @@
     }
 
     &__img {
+      cursor: pointer;
       margin-left: auto;
     }
   }
