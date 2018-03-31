@@ -17,10 +17,6 @@
     "babel-preset-react": "6.11.1",
     "babel-runtime": "6.11.6",
     "backpack-react-scripts": "5.0.10",
-    "bpk-component-button": "^2.0.11",
-    "bpk-component-code": "^1.0.53",
-    "bpk-component-grid": "^1.1.60",
-    "bpk-component-text": "^1.0.51",
     "bpk-mixins": "^17.5.0",
     "bpk-stylesheets": "^3.2.97",
     "case-sensitive-paths-webpack-plugin": "1.1.2",
@@ -57,6 +53,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "dotenv": "^5.0.1",
     "es6-promise": "^3.2.1",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "^4.15.0",

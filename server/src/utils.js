@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-const MAX_ITEMS = 20;
+const MAX_ITEMS = 40;
 
 const findById = (id, array) => {
   return array.find(item => item.Id === id);
@@ -68,6 +68,5 @@ const buildSearchResponse = (results) => {
 }
 
 module.exports = {
-  MAX_ITEMS,
   buildSearchResponse
 }

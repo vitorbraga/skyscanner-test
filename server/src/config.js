@@ -1,5 +1,4 @@
 // obtain API key from your Skyscanner contact
-//const APIKEY = process.env.APIKEY; TODO
 const APIKEY = 'ss630745725358065467897349852985';
 
 if (!APIKEY) {

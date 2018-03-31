@@ -35,7 +35,7 @@ const buildCurrentFlight = () => {
   const flightInfo = {
     fromPlace: 'EDI',
     toPlace: 'LCY',
-    adults: 2,
+    adults: 1,
     class: 'Economy',
     fromDate: dates.fromDate,
     toDate: dates.toDate
@@ -45,7 +45,7 @@ const buildCurrentFlight = () => {
 };
 
 const formatDateToView = (dateStr) => {
-  return moment(dateStr).format('DD/MM/YYYY');
+  return moment(dateStr).format('DD/MM/YY');
 }
 
 module.exports = {

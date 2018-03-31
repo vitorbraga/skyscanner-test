@@ -19,7 +19,6 @@ let cachedData = {};
 const livePricing = {
   api: {
     createSession: (params) => {
-      console.log(sessionParams(params))
       return fetch(pricingUrl + `?apikey=${config.apiKey}`, {
         method: 'POST',
         body: sessionParams(params),

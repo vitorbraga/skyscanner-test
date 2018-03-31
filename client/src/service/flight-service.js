@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'http://192.168.15.10:4000/api/search';
+const URL = `${process.env.SERVER_HOST}/api/search`;
 
 const buildURL = (p) => {
   return `${URL}?adults=${p.adults}&class=${p.class}&fromPlace=${p.fromPlace}&` +
