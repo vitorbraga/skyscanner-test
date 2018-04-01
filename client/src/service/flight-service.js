@@ -14,7 +14,6 @@ const searchFlights = (flightInfo) => new Promise(
         resolve(response);
       })
       .catch(function (error) {
-        console.log(error);
         reject(error);
       });
   });

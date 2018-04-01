@@ -1,5 +1,6 @@
+import { errorLoading, stopLoading } from '../actions';
+
 import searchFlights from '../service/flight-service';
-import { stopLoading } from '../actions';
 
 export const updateFlights = (flights) => ({
   type: 'UPDATE_FLIGHTS',
@@ -13,7 +14,7 @@ const fecthAndDispatch = (dispatch, flightsInfo) => {
       dispatch(stopLoading());
     })
     .catch(error => {
-      console.log('Some error', error); // FIXME
+      dispatch(errorLoading());
     });
 }
 

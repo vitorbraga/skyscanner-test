@@ -6,15 +6,13 @@ import { RectShape, RoundShape, TextRow } from 'react-placeholder/lib/placeholde
 import React from 'react';
 import ReactPlaceholder from 'react-placeholder';
 
-const Loading = (props) => {
-  return (
-    <div className="loading">
-      <LoadingCard />
-      <LoadingCard />
-      <LoadingCard />
-    </div>
-  );
-};
+const Loading = () => (
+  <div className="loading">
+    <LoadingCard />
+    <LoadingCard />
+    <LoadingCard />
+  </div>
+);
 
 const CustomPlaceholder = (props) => {
   return (

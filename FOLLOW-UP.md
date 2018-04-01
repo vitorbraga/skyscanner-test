@@ -29,6 +29,7 @@ I would implement:
 - filtering and sorting
 - menu
 - tests
+- internationalization
 
 ### Q) Which parts are you most proud of? And why?
 I'm proud of my shimmer-placeholder and the flight-cards I've implemented. 

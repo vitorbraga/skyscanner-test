@@ -17,8 +17,11 @@ class Results extends Component {
 
     return (
       <div className="results">
-        {flights.length > 0 &&
-          flights.map((flight, index) => <FlightCard key={`flight-${index}`} flight={flight} />)}
+        {flights.length > 0 ? (
+          flights.map((flight, index) => <FlightCard key={`flight-${index}`} flight={flight} />)
+        ) : (
+          <span className="results__empty-state">No flights found</span>
+        )}
       </div>
     );
   }

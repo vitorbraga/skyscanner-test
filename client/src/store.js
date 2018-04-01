@@ -4,7 +4,7 @@ import rootReducer from './reducers';
 import thunk from 'redux-thunk';
 
 const initialState = {
-  loading: false,
+  loading: { isLoading: false, error: false },
   flights: []
 };
 

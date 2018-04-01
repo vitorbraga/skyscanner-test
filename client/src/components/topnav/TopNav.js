@@ -11,7 +11,14 @@ const TopNav = () => (
         <img className='logo' alt="Skyscanner" src={logo}/>
         <span className='logo-text'>Skyscanner</span>
       </a>
-      <img className="top-nav__wrapper__img" alt="menu" src={menu} height={24} width={24}/>
+      <img
+        className="top-nav__wrapper__img"
+        title="Menu"
+        alt="menu"
+        src={menu}
+        height={24}
+        width={24}
+      />
     </div>
   </header>
 );

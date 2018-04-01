@@ -12,4 +12,10 @@
   background-color: #F2F1F4;
   height: auto;
   overflow: hidden;
+
+  &__empty-state {
+    color: #909090;
+    margin-top: 16px;
+    font-size: 14px;
+  }
 }
