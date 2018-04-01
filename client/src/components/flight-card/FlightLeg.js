@@ -4,7 +4,9 @@ import React from 'react';
 import arrow from '../../images/arrow-grey.svg';
 
 const FlightLeg = (props) => {
+
   const { leg } = props;
+
   return (
     <div className="flight-leg">
       <div className="flight-leg__left">
